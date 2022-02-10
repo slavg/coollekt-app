@@ -1,0 +1,15 @@
+[flake8]
+ignore = F403,E501
+exclude =
+    .git,
+    __pycache__,
+    docs/source/conf.py,
+    coollekt/models.py,
+    coollekt/admin.py,
+    coollekt/admin/__init__.py,
+    coollekt/models/__init__.py,
+    old,
+    build,
+    migrations,
+    dist
+max-complexity = 10

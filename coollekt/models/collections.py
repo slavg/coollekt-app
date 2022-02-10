@@ -20,9 +20,9 @@ class Collection(AbstractModel):
 class Item(AbstractModel):
     name = models.CharField(max_length=1024, blank=True, null=True)
     description = models.TextField(max_length=500, blank=True, null=True)
-    collection = models.ForeignKey(Collection, related_name='items', on_delete=models.CASCADE)
-    price = models.DecimalField(default=0.00, decimal_places=3, max_digits=50, blank=True, null=True)
-
-
-
-
+    collection = models.ForeignKey(
+        Collection, related_name="items", on_delete=models.CASCADE
+    )
+    price = models.DecimalField(
+        default=0.00, decimal_places=3, max_digits=50, blank=True, null=True
+    )

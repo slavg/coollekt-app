@@ -43,3 +43,5 @@ django-neomodel==0.0.7
 neo4j-driver==4.3.1
 neomodel==4.0.4
 whitenoise==3.3.1
+black==22.1.0
+flake8==4.0.1

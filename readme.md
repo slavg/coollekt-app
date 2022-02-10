@@ -31,5 +31,13 @@ http://127.0.0.1:8000/api/schema/redoc/
 http://127.0.0.1:8000/api/schema/swagger-ui/
 ```
 
+<br/>
+
+Linter/Formatter
+```
+black coollekt
+flake8 collekt
+```
+
 <br/><br/>
 Any comment or question: slavko@glisic.com

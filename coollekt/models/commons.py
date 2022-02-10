@@ -1,5 +1,3 @@
-from _datetime import datetime
-
 from django.db import models
 
 
