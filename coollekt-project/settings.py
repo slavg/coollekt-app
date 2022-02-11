@@ -104,6 +104,8 @@ DATABASES = {
 }
 
 
+NEOMODEL_NEO4J_BOLT_URL = os.environ.get('NEO4J_BOLT_URL', 'bolt://neo4j:pass@123@127.0.0.1:7688')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

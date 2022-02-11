@@ -33,6 +33,21 @@ http://127.0.0.1:8000/api/schema/swagger-ui/
 
 <br/>
 
+Create superuser:
+```
+Set following config in local environment:
+DJANGO_SUPERUSER_USERNAME=admin
+DJANGO_SUPERUSER_EMAIL=admin@test.com
+DJANGO_SUPERUSER_PASSWORD=admin123
+```
+or create it manually
+```
+docker exec -it <the-container-id> /bin/sh
+python manage.py createsuperuser
+```
+
+<br/>
+
 Linter/Formatter
 ```
 black coollekt

@@ -4,21 +4,50 @@ services:
   web:
     build: .
     #command: python manage.py runserver 0.0.0.0:8000
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    #command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: /bin/bash -c "chmod +x /usr/src/app/docker-entrypoint.sh && /usr/src/app/docker-entrypoint.sh"
     volumes:
       - ./:/usr/src/app/
     ports:
       - 8000:8000
+    depends_on:
+      - neo4j_db
+    networks:
+      - coollkt_network
+    links:
+      - neo4j_db
     env_file:
       - ./.env.dev
   db:
     image: postgres:13.0
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+    networks:
+      - coollkt_network
     environment:
       - POSTGRES_USER=coollekt
       - POSTGRES_PASSWORD=coollekt
       - POSTGRES_DB=coollekt_dev
-
+  neo4j_db:
+    image: neo4j:4.2-enterprise
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    expose:
+      - 7474
+      - 7687
+    volumes:
+      - neo4j_data:/data/dbms
+    environment:
+      - NEO4J_AUTH=neo4j/foobar
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - dbms.connector.bolt.listen_address=:7687
+      - dbms.connector.bolt.advertised_address=:7687
+    networks:
+      - coollkt_network
+networks:
+  coollkt_network:
+    driver: bridge
 volumes:
   postgres_data:
+  neo4j_data:
