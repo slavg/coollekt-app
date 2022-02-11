@@ -36,7 +36,15 @@ http://127.0.0.1:8000/api/schema/swagger-ui/
 Linter/Formatter
 ```
 black coollekt
-flake8 collekt
+flake8 coollekt
+```
+
+<br/>
+
+Run Tests and Coverage
+```
+coverage run manage.py test --pattern="test_*.py"
+coverage report
 ```
 
 <br/><br/>

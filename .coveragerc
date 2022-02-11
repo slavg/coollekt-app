@@ -1,0 +1,26 @@
+[report]
+branch = True
+omit =
+    coollekt/tests/*
+    coollekt/models/*
+    coollekt/migrations/*
+    coollekt/admin/*
+    coollekt/apps.py
+    */__init__.py
+    */settings.py
+    */serializers.py
+    */urls.py
+    */manage.py
+    coollekt/views.py
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def __init__
+    if self.debug:
+    if settings.DEBUG
+    raise AssertionError
+    raise NotImplementedError
+    if 0:
+    if __name__ == .__main__.:
+    class .*\bProtocol\):
+    @(abc\.)?abstractmethod

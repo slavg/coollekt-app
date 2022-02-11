@@ -5,12 +5,13 @@ from coollekt.models.users import User
 
 
 class Category(AbstractModel):
-    name = models.CharField(max_length=1024, blank=True, null=True)
+    key = models.CharField(max_length=128)
+    name = models.CharField(max_length=1024)
     description = models.TextField(max_length=500, blank=True, null=True)
 
 
 class Collection(AbstractModel):
-    name = models.CharField(max_length=1024, blank=True, null=True)
+    name = models.CharField(max_length=1024)
     description = models.TextField(max_length=500, blank=True, null=True)
     public = models.BooleanField(default=False)
     categories = models.ManyToManyField(Category)
@@ -18,7 +19,7 @@ class Collection(AbstractModel):
 
 
 class Item(AbstractModel):
-    name = models.CharField(max_length=1024, blank=True, null=True)
+    name = models.CharField(max_length=1024)
     description = models.TextField(max_length=500, blank=True, null=True)
     collection = models.ForeignKey(
         Collection, related_name="items", on_delete=models.CASCADE

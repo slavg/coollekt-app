@@ -28,5 +28,5 @@ class UserViewSet(viewsets.ModelViewSet):
     def partial_update(self, request, pk=None):
         pass
 
-    def destroy(self, request, pk=None):
-        pass
+    def destroy(self, request, pk=None, *args, **kwargs):
+        return super(UserViewSet, self).destroy(request, *args, **kwargs)

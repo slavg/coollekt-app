@@ -8,6 +8,7 @@ exclude =
     coollekt/admin.py,
     coollekt/admin/__init__.py,
     coollekt/models/__init__.py,
+    coollekt/tests.py,
     old,
     build,
     migrations,
