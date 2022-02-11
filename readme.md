@@ -43,8 +43,7 @@ flake8 coollekt
 
 Run Tests and Coverage
 ```
-coverage run manage.py test --pattern="test_*.py"
-coverage report
+pytest
 ```
 
 <br/><br/>

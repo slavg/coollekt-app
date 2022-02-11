@@ -1,5 +1,4 @@
 [report]
-branch = True
 omit =
     coollekt/tests/*
     coollekt/models/*
@@ -12,6 +11,12 @@ omit =
     */urls.py
     */manage.py
     coollekt/views.py
+    coollekt/tests.py
+    coollekt/models.py
+    coollekt/admin.py
+    coollekt-project/wsgi.py
+    coollekt-project/asgi.py
+
 exclude_lines =
     pragma: no cover
     def __repr__

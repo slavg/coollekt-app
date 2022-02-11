@@ -17,14 +17,14 @@ class UserTests(APITestCase):
         url = reverse("user-list")
         response = self.api_client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEquals(len(response.data.get("results")), 6)
+        self.assertEqual(len(response.data.get("results")), 6)
 
     def test_get_user(self):
         pk = User.objects.filter(username="admin").get().pk
         url = reverse("user-detail", kwargs={"pk": pk})
         response = self.api_client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEquals(response.data.get("email"), "admin@test.com")
+        self.assertEqual(response.data.get("email"), "admin@test.com")
 
     def test_create_user(self):
         url = reverse("user-list")

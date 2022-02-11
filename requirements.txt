@@ -45,9 +45,11 @@ neomodel==4.0.4
 whitenoise==3.3.1
 black==22.1.0
 flake8==4.0.1
-django-webtest==1.9.9
+pytest==7.0.0
+pytest-django==4.5.2
 Faker==12.3.0
 factory-boy==3.2.1
 django-discover-runner==1.0
 coverage==6.3.1
+pytest-cov==3.0.0
 Pillow==9.0.1
